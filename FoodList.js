@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {View, Text, ScrollView} from 'react-native';
 import FoodTile from './FoodTile';
 import axios from 'axios';
-import axiosUrl from './urlForFirebase'
+//You'll need to add this file, in order for the project to work correctly. 
+import axiosDetails from './urlForFirebase';
 
 
 class FoodList extends Component{
@@ -12,9 +13,9 @@ class FoodList extends Component{
 
 
   componentDidMount = () => {
-    axios.get(axiosUrl,{
+    axios.get(axiosDetails.url,{
       headers:{
-        "apiKey": "AIzaSyAQKxe01GdCrSZRBTIwZntoKT5QypSDq3o",
+        "apiKey":axiosDetails.apiKey,
         "accept":"application/json"
       }
     })
