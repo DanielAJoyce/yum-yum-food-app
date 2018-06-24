@@ -1,0 +1,50 @@
+{
+  "food":[
+    {
+      "name":"fajita",
+      "tags":["mexican","cheese", "chicken"],
+      "nutrition":{
+        "calories":300,
+        "fat":"10g",
+        "sugar":"5g",
+        "carbohydrates":"40g",
+        "servings":3
+      },
+      "region-type":"mexican",
+      "meal-type":"dinner",
+      "isVegan":false,
+      "isVegetarian":false,
+      "icon":"fajita.jpeg"
+    },
+    {
+      "name":"couscous salad",
+      "tags":["vegan","salad", "indian", "vegetarian"],
+      "nutrition":{
+        "calories":50,
+        "fat":"5g",
+        "sugar":"20g",
+        "carbohydrates":"22g"
+      },
+      "region-type":"indian",
+      "meal-type":"dinner",
+      "isVegan":true,
+      "isVegetarian":true,
+      "icon":"couscous-salad.jpeg"
+    },
+    {
+      "name":"chocolate cake",
+      "tags":["cake","chocolate", "vegetarian", "dessert"],
+      "nutrition":{
+        "calories":350,
+        "fat":"20g",
+        "sugar":"30g",
+        "carbohydrates":"40g"
+      },
+      "region-type":"british",
+      "meal-type":"dessert",
+      "isVegan":false,
+      "isVegetarian":true,
+      "icon":"chocolate-cake.jpeg"
+    }
+  ]
+}
