@@ -15,8 +15,8 @@ import foodIcon from './assets/food/fajita.jpeg';
 
 const FoodTile = props => {
 
-  onPressButton = () => {
-    alert("hello");
+  if(props.ishighlighted){
+    styles.cardInline.color = "red"
   }
     return(
       <TouchableHighlight 
@@ -24,7 +24,8 @@ const FoodTile = props => {
       underlayColor="rgba(253,138,94,0)"
       activeOpacity={0}
       
-      onPress={this.onPressButton}>
+      //  onPress={this.onPressButton}
+       >
         <Card
           image={foodIcon}
           style={{borderRadius:20}}
