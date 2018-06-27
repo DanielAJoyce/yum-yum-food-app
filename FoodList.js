@@ -3,7 +3,7 @@ import {View, Text, ScrollView, FlatList} from 'react-native';
 import FoodTile from './FoodTile';
 import axios from 'axios';
 //You'll need to add this file, in order for the project to work correctly. 
-import axiosDetails from './urlForFirebase';
+import axiosDetails from './axiosDetails';
 
 
 class FoodList extends Component{
@@ -38,43 +38,31 @@ class FoodList extends Component{
   .catch(function (error) {
     console.log(error);
   });
+  }  
+  
+  handleClick = (name) => {
+    alert("hi" + name);
   }
   
   render(){
-  
+
     return(
-      <View style={{width:'100%'}}>
+      <View style={{width:'100%', marginBottom:20}}>
         <FlatList
           data={this.state.items}
+          keyExtractor={item => item.name}
           renderItem={({item}) => (
-            
             <FoodTile
-              style={{width:'80%'}}
-                key={item.id}
-                name={item.name}
-                calories={item.nutrition.calories}
-                isVegan={item.isVegan}
-                isVegetarian={item.isVegetarian}
-                icon={item.icon}
-            />
-           
-          )}
-        />
-
-        {/* <ScrollView>
-          {this.state.items.map(item => (
-              <FoodTile 
                 style={{width:'80%'}}
-                key={item.id}
+                id={item.name}
                 name={item.name}
                 calories={item.nutrition.calories}
                 isVegan={item.isVegan}
                 isVegetarian={item.isVegetarian}
                 icon={item.icon}
-                isHighlighted={this.isHighlighted}
-                onPress={(e) => this.checkLastTouched(item.id, e)}/>
-            ))}
-        </ScrollView>  */}
+                onTouch={() => this.handleClick(item.name)}
+                />
+          )}/>
       </View>
     );
   }

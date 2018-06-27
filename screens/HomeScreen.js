@@ -10,9 +10,7 @@ export default class HomeScreen extends Component{
     console.log(this.props.navigation);
     return (
       <View style={styles.container}>
-      
-      <Text>Open up App.js to start working on your app! bla bla </Text>
-      <Button style={styles.button} title="Go here" onPress={() => this.props.navigation.navigate('Details')}></Button>
+      {/* <Button style={styles.button} title="Go here" onPress={() => this.props.navigation.navigate('Details')}></Button> */}
       <FoodList style={styles.list}></FoodList>
     </View>
     )
@@ -28,6 +26,7 @@ const styles = StyleSheet.create({
   },
   list:{
     width:'100%',
+    marginBottom:10
   },
   button:{
     marginTop:30

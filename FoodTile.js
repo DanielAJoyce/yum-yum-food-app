@@ -4,27 +4,13 @@ import {Card, Rating} from 'react-native-elements';
 import foodIcon from './assets/food/fajita.jpeg';
 
 
-/*
-    key={item.id}
-              name={item.name}
-              calories={item.nutrition.calories}
-              isVegan={item.isVegan}
-              isVegetarian={item.isVegetarian}
-              icon={item.icon}/>
-*/
-
 const FoodTile = props => {
-
-  if(props.ishighlighted){
-    styles.cardInline.color = "red"
-  }
     return(
       <TouchableHighlight 
       color='rgba(0,0,0,0.5)'
       underlayColor="rgba(253,138,94,0)"
       activeOpacity={0}
-      
-      //  onPress={this.onPressButton}
+      onPress={props.onTouch}
        >
         <Card
           image={foodIcon}
