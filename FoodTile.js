@@ -5,6 +5,9 @@ import foodIcon from './assets/food/fajita.jpeg';
 
 
 const FoodTile = props => {
+
+  console.log("inside props" + props.color);
+  
     return(
       <TouchableHighlight 
       color='rgba(0,0,0,0.5)'
@@ -30,17 +33,19 @@ const FoodTile = props => {
                 {props.isVegetarian ? <Image style={styles.icon} source={require('./assets/icons/vegetarian.png')}/> : null}
               </View>
           </View>
-          <Text style={styles.cardTitle}>
+          <Text style={{color: props.color}}>
             {props.name.charAt(0).toUpperCase() + props.name.slice(1)}
           </Text>
-          <Text style={styles.cardSubtitles}>
+          <Text style={[styles.cardSubtitles, ]}>
             Calories: {props.calories}
           </Text>
         </Card>
       </TouchableHighlight>
     )
-};
 
+
+
+};
 
 const styles = StyleSheet.create({
   icon:{
@@ -61,13 +66,13 @@ const styles = StyleSheet.create({
     width:30
   },
   cardTitle:{
-    fontSize:15,
-    color:'#606060'
+    fontSize:15
   },
   cardSubtitles:{
     color:'#c4c4c4'
   }
 });
+
 
 
 export default FoodTile;

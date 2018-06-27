@@ -41,14 +41,24 @@ class FoodList extends Component{
   }  
   
   handleClick = (name) => {
-    alert("hi" + name);
-  }
+    console.log(name);
+    this.setState({
+      isHighlighted:true
+    });
+
+    console.log(this.state.isHighlighted);
+  };
   
   render(){
+    let itemColor = "black";
 
-    return(
-      <View style={{width:'100%', marginBottom:20}}>
-        <FlatList
+    
+    if(this.state.isHighlighted == true){
+      itemColor = "red";
+    }
+
+    let foodFlatList = (
+      <FlatList
           data={this.state.items}
           keyExtractor={item => item.name}
           renderItem={({item}) => (
@@ -56,6 +66,7 @@ class FoodList extends Component{
                 style={{width:'80%'}}
                 id={item.name}
                 name={item.name}
+                color={itemColor}
                 calories={item.nutrition.calories}
                 isVegan={item.isVegan}
                 isVegetarian={item.isVegetarian}
@@ -63,6 +74,12 @@ class FoodList extends Component{
                 onTouch={() => this.handleClick(item.name)}
                 />
           )}/>
+    )
+
+    console.log("itemColor: " + itemColor + " " + "isHighlighted: " + this.state.isHighlighted);
+    return(
+      <View style={{width:'100%', marginBottom:20}}>
+          {foodFlatList}
       </View>
     );
   }
