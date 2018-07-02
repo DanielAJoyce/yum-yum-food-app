@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 import {Text, View} from 'react-native';
 
-class DetailsScreen extends Component{
+class RecommendedScreen extends Component{
   render(){
     return(
       <View>
         <Text>
-          Details
+        RecommendedScreen
         </Text>
       </View>
     )
   }
 };
 
-export default DetailsScreen;
+export default RecommendedScreen;

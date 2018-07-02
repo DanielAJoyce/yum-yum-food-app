@@ -1,13 +1,10 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet, TouchableHighlight} from 'react-native'
 import {Card, Rating} from 'react-native-elements';
-import foodIcon from './assets/food/fajita.jpeg';
 
 
 const FoodTile = props => {
-
-  console.log("inside props" + props.color);
-  
+  console.log(`${props.icon}`);
     return(
       <TouchableHighlight 
       color='rgba(0,0,0,0.5)'
@@ -16,7 +13,7 @@ const FoodTile = props => {
       onPress={props.onTouch}
        >
         <Card
-          image={foodIcon}
+          image={require("./assets/food/small-fajita.jpg")}
           style={{borderRadius:20}}
           >
           <View style={styles.cardInline}>
