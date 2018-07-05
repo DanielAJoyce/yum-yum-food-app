@@ -6,11 +6,6 @@ import {Card, Rating} from 'react-native-elements';
 const FoodTile = props => {
   console.log(`${props.icon}`);
     return(
-      // <TouchableHighlight 
-      // color='rgba(0,0,0,0.5)'
-      // underlayColor="rgba(253,138,94,0)"
-      // activeOpacity={0}
-      //  >
         <Card
           image={require("./assets/food/small-fajita.jpg")}
           style={{borderRadius:20}}
@@ -36,7 +31,6 @@ const FoodTile = props => {
             Calories: {props.calories}
           </Text>
         </Card>
-      // </TouchableHighlight>
     )
 
 
