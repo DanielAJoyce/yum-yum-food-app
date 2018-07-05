@@ -3,6 +3,12 @@
     {
       "name":"fajita",
       "tags":["mexican","cheese", "chicken"],
+      "rating":4,
+      "reviews":[
+        {
+          "reviewId":"00938jeqad"
+        }
+      ],
       "nutrition":{
         "calories":300,
         "fat":"10g",
@@ -10,11 +16,26 @@
         "carbohydrates":"40g",
         "servings":3
       },
-      "region-type":"mexican",
-      "meal-type":"dinner",
+      "region":"mexican",
+      "mealType":"dinner",
       "isVegan":false,
       "isVegetarian":false,
-      "icon":"fajita.jpeg"
+      "icon":"fajita.jpeg",
+      "body":{
+        "ingredients":[
+            {
+              "name":"coca powder",
+              "amount":53,
+              "measurement":"grams",
+              "measurementSystem":"metric"
+            }
+        ],
+         "steps":[
+          "PREP THE FOOD",
+          "COOK THE FOOD",
+          "EAT THE FOOD"
+        ]
+      }
     },
     {
       "name":"couscous salad",
@@ -25,8 +46,8 @@
         "sugar":"20g",
         "carbohydrates":"22g"
       },
-      "region-type":"indian",
-      "meal-type":"dinner",
+      "region":"indian",
+      "mealType":"dinner",
       "isVegan":true,
       "isVegetarian":true,
       "icon":"couscous-salad.jpeg"

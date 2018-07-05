@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, ScrollView, FlatList} from 'react-native';
+import {View, Text, ScrollView, FlatList, TouchableHighlight} from 'react-native';
 import FoodTile from './FoodTile';
 import axios from 'axios';
 //You'll need to add this file, in order for the project to work correctly. 
@@ -62,6 +62,14 @@ class FoodList extends Component{
           data={this.state.items}
           keyExtractor={item => item.name}
           renderItem={({item}) => (
+            <TouchableHighlight 
+            onPress={() => this.props.navigation.navigate('Details',
+                {
+                  name:item.name,
+                  calories:item.nutrition.calories,
+                  icon:item.icon
+                }
+              )} >
             <FoodTile
                 style={{width:'80%'}}
                 id={item.name}
@@ -73,6 +81,7 @@ class FoodList extends Component{
                 icon={item.icon}
                 onTouch={() => this.handleClick(item.name)}
                 />
+              </TouchableHighlight>
           )}/>
     )
 

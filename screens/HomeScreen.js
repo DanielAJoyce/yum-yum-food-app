@@ -19,7 +19,7 @@ export default class HomeScreen extends Component{
     return (
       
       <View style={styles.container}>
-        <FoodList style={styles.list}></FoodList>
+        <FoodList navigation={this.props.navigation} style={styles.list}></FoodList>
       </View>
     )
   }
