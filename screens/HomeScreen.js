@@ -15,7 +15,7 @@ export default class HomeScreen extends Component{
   }
 
   render(){
-    console.log(this.props.navigation); 
+    // console.log(this.props.navigation); 
     return (
       
       <View style={styles.container}>

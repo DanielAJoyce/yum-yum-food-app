@@ -22,7 +22,7 @@ class FoodList extends Component{
       }
     })
   .then((response)  => {
-    console.log(response.data);
+    // console.log(response.data);
 
     const listItems = [];
     for(let key in response.data){
@@ -31,8 +31,8 @@ class FoodList extends Component{
         id:key
       })
     }
-    console.log("List Items:");
-    console.log(listItems);
+    // console.log("List Items:");
+    // console.log(listItems);
     this.setState({items:listItems});
   })
   .catch(function (error) {
@@ -41,12 +41,12 @@ class FoodList extends Component{
   }  
   
   handleClick = (name) => {
-    console.log(name);
+    // console.log(name);
     this.setState({
       isHighlighted:true
     });
 
-    console.log(this.state.isHighlighted);
+    //console.log(this.state.isHighlighted);
   };
   
   render(){
