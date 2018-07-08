@@ -12,7 +12,8 @@ class SearchScreen extends Component{
     super(props);
     this.state= {
       text:'',
-      results:[]
+      results:[],
+      isLoading:false
     };
   }
   componentDidMount = () =>{
@@ -38,7 +39,9 @@ class SearchScreen extends Component{
   }
 
   getData = () => {
-
+    this.setState({
+      isLoading:true
+    })
     axios.get(axiosDetails.url,{
       headers:{
         "apiKey":axiosDetails.apiKey,
@@ -56,15 +59,23 @@ class SearchScreen extends Component{
         searchData.push(response.data[x]);
       }
     }
-    this.setState({
-      results:searchData
-    });
+    if(searchData.length > 0){
+      this.setState({
+        results:searchData,
+        isLoading:false
+      });
+    }else{
+      this.setState({
+        isLoading:false
+      })
+    }
   })
   }
 
   
   render(){
-
+    let isLoading = this.state.isLoading;
+    
     let list = null;
 
     if(this.state.results.length > 0){
@@ -106,7 +117,11 @@ class SearchScreen extends Component{
             value={this.state.text}
             placeholder="Search our recipes..."
          />
-
+         {isLoading ? (
+           <Text>Loading...</Text>
+         ) : (
+           <View></View>
+         )}
          {list}
       </View>
     )
